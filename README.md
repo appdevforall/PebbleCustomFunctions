@@ -2,7 +2,7 @@
 
 PebbleCustomFunctions is a  designed for 
 [Code on the Go](https://github.com/appdevforall/CodeOnTheGo).
-It provides a set of reusable functions to:
+It provides a set of reusable templates to:
 * Show how to write one or more Pebble Custom Functions and package them into a reusable jar file
 * Show how to invoke the Pebble Custom Functions and display the results
 
@@ -24,6 +24,17 @@ This repository contains code to create and use Pebble Custom Functions. It also
 . *zip* utilty
 . replace the *adb* command in the shell scripts with a copy command, if needed 
 
+## Customization
+To create your own Pebble Custom Fuctions, you need to:\
+* Replace the Pebble source file(s) in\
+```PebbleCustomFunctions/core-build/BuildExtensionsActivity/ext/src/main/java/PACKAGE_NAME/EXAMPLE_CODE```\
+with the executable code for your own Pebble Custom Function(s)
+* Change the mapping of function names to classes in:\
+```PebbleCustomFunctions/core-build/BuildExtensionsActivity/ext/src/main/java/PACKAGE_NAME/BasicExtensions.kt.peb```
+* Run the *make-build.sh* script to build the template (cgt) file
+* Install it as shown in the **Installation** section
+    
+
 ## Installation
 1. Open *Code On the Go*
 2. From the main menu select *Terminal*
@@ -34,3 +45,17 @@ This repository contains code to create and use Pebble Custom Functions. It also
 6. *exit* Termux
 
 ## Usage
+Installing the *core-build.cgt* file will create a new template in the *Code On the Go New Project* screen named *Build Extensions*. This template is used to create a jar file named *extension.jar* which contains the exectable code to the Pebble Custion Functions. This file **must** be included in any template (cgt) files that use them. To create the *extensions.jar* file:
+1. Select the *Build Extensions* template from the *New Project* screen
+2. If the *Include Sample Functions* checkbox is checked, then the example Pebble Functions will be created
+3. Select *Create Project*
+4. After the project has been initialized successfully, select the *Gradle Tasks* icon from the action bar
+5. In the search bar, enter *:ext:build* and select :ext:buildExtensionsJar* from the drop-down menu
+6. Select the green run arrow twice to start the build
+7. After the build has completed successfully, return to the *File tree* by selecting the *Project Menu* icon
+8. In the *File Tree*, navigate to \
+   ```ext/build/libs```
+9.  Long press on *extensions.jar* and select *Copy path" from the menu
+10.  
+
+
