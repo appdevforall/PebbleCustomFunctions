@@ -59,10 +59,10 @@ Installing the *core-build.cgt* file will create a new template in the *Code On 
 10. Select the *Terminal* icon from the left hand rail
 11. The *extensions.jar* file needs to be saved in an accessable location (e.g. /sdcard/Download) for later use. The paste action can be used to paste the path previously copied into the copy command.
 
-### USing The extensions.jar File
-To use the Pebble Custom Function(s) created in the *Build Extensions* template the file **mus** be included in every template (cgt) file where the cusom function id envoked. To do this:
+### Using The extensions.jar File
+To use the Pebble Custom Function(s) created in the *Build Extensions* template, the file **must** be included in every template (cgt) file where the cusom function is envoked. To do this:
 1. Make a directory where the template can be unzipped
-2. unzip the template file (cgt) into that directory
+2. Unzip the template file (cgt) into that directory
 3. copy the *extensions.jar* file into the top level of the directory
 4. remove the old cgt file
 5. Create a new cgt file, e.g.\
