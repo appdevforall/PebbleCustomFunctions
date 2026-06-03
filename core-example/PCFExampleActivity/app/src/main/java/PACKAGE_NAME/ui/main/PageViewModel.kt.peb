@@ -16,6 +16,7 @@ class PageViewModel : ViewModel() {
     val text: LiveData<String> = Transformations.map(_index) { input ->
     ${% if EXAMPLE_CODE %}
     	when (input) {
+			// These functions reverse(), queryDB() and queryURL() come from extensions.jar
              1 -> result = "${{ reverse ("Hello world from section: reverse") }}"
              2 -> result = "${{ queryDB() }}"
              3 -> result = 
