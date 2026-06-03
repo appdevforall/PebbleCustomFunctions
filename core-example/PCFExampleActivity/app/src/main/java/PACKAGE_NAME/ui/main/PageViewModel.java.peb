@@ -20,18 +20,22 @@ public class PageViewModel extends ViewModel {
 	    String jsonString = "";
 	    switch(input) {
 	    	case 1:
+					  // reverse() function comes from extensions.jar
             	     result = "${{ reverse ("Hello world from section: reverse") }}";
 		break;
 		case 2:
+			// queryDB() function comes from extensions.jar
 		     result = "${{ queryDB() }}";
       	     	break;
 		case 3:
+			// queryURL() function comes from extensions.jar
 		     result  =
 		     """
 		     ${{ queryURL("http://localhost:6174/PUCC/api/v1.0/student/0663864") | raw }}
 		     """;
 		break;
 		case 4:
+			// Traditional pebble behavior for replacing a variable
 		     result = "Hello ${{STUDENT_NAME}}";
 		     break;
 		default:
